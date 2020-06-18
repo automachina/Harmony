@@ -1,52 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<TargetFrameworks>net35;net45;net472;net48;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
-		<IsPackable>false</IsPackable>
-		<IntermediateOutputPath>obj</IntermediateOutputPath>
-		<OutputPath>obj</OutputPath>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\Harmony.csproj" />
-	</ItemGroup>
-
-	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
-		<Optimize>false</Optimize>
-		<DebugType>full</DebugType>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)'=='Release'">
-		<Optimize>true</Optimize>
-		<DebugType>none</DebugType>
-		<DebugSymbols>false</DebugSymbols>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
-		<PackageReference Include="NUnit" Version="3.12.0" />
-		<PackageReference Include="NUnit3TestAdapter" Version="3.16.1" Condition="'$(TargetFramework)'!='netcoreapp2.0'">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-	</ItemGroup>
-
-	<ItemGroup>
-		<!-- Reference assemblies are needed for non-Windows .NET Framework targeting builds. -->
-		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
-		<PackageReference Include="jnm2.ReferenceAssemblies.net35" Version="1.0.0" PrivateAssets="All" Condition="'$(TargetFramework)'=='net35'" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(TargetFramework)'=='netcoreapp2.0'">
-		<PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
-		<PackageReference Include="System.Reflection.Emit.ILGeneration" Version="4.7.0" />
-		<PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="MonoMod.Common" Version="20.5.31.1" />
-	</ItemGroup>
-
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.1;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
+        <IsPackable>false</IsPackable>
+        <IntermediateOutputPath>obj</IntermediateOutputPath>
+        <OutputPath>obj</OutputPath>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Harmony.csproj" />
+    </ItemGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+        <Optimize>false</Optimize>
+        <DebugType>full</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+        <DefineConstants>DEBUG</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
+        <Optimize>true</Optimize>
+        <DebugType>none</DebugType>
+        <DebugSymbols>false</DebugSymbols>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+        <PackageReference Include="NUnit" Version="3.12.0" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" Condition="'$(TargetFramework)'!='netcoreapp2.0'">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <!-- Reference assemblies are needed for non-Windows .NET Framework targeting builds. -->
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
+        <PackageReference Include="jnm2.ReferenceAssemblies.net35" Version="1.0.0" PrivateAssets="All" Condition="'$(TargetFramework)'=='net35'" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)'=='netcoreapp2.0'">
+        <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+        <PackageReference Include="System.Reflection.Emit.ILGeneration" Version="4.7.0" />
+        <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="MonoMod.Common" Version="20.5.31.1" />
+    </ItemGroup>
 </Project>
